@@ -1,0 +1,26 @@
+{
+  "name": "myfirstapp",
+  "version": "1.0.1",
+  "description": "\"This is my first attempt to make a full stack web app using the MEAN stack\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "author": "Mark Shanahan",
+  "license": "ISC",
+  "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.26",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.4.0",
+    "mongodb": "^2.2.26",
+    "mongojs": "^2.4.0",
+    "mongoose": "^4.9.7",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1"
+  }
+}

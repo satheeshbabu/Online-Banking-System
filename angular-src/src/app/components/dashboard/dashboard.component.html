@@ -1,0 +1,13 @@
+
+       
+<div class="container">
+  <div class="col-2 nav"><ul>
+    <li [routerLink]="[{ outlets: { 'dash-content-area': ['dash'] } }]">Home</li>
+            <li [routerLink]="[{ outlets: { 'dash-content-area': ['profile'] } }]">Personal Details</li>
+            </ul>
+  </div>
+  
+  <div class="col-10 main">
+    <router-outlet name='dash-content-area'></router-outlet>
+  </div>
+</div>

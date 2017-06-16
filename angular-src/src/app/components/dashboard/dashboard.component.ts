@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'dashboard',
@@ -7,10 +8,21 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+user: any;
 
-  constructor() { }
+  constructor(private authService:AuthService, private router:Router) { }
 
   ngOnInit() {
+    this.authService.getProfile().subscribe(profile => {
+      
+        this.user = profile.user;
+        console.log(profile);
+      
+    },
+    err => {
+      console.log(err);
+      return false;
+    });
   }
 
 }

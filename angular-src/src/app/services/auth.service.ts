@@ -53,7 +53,7 @@ export class AuthService {
 
   loggedIn(){
     const token = localStorage.getItem('id_token');
-    console.log(token);
+    //console.log(token);
     if(token !=null)
       return true;
     else

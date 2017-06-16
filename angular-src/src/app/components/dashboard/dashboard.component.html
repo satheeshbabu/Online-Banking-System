@@ -1,10 +1,20 @@
 
        
 <div class="container">
-  <div class="col-2 nav"><ul>
-    <li [routerLink]="[{ outlets: { 'dash-content-area': ['dash'] } }]">Home</li>
-            <li [routerLink]="[{ outlets: { 'dash-content-area': ['profile'] } }]">Personal Details</li>
-            </ul>
+  <div class="col-2 nav">
+    <div class="userDiv" *ngIf="user"> 
+      <h3> {{user.name}}</h3>
+      <h4> Balance: €{{user.balance}}</h4>
+    </div>
+    <ul>
+      <li [routerLink]="[{ outlets: { 'dash-content-area': ['dash'] } }]">Home</li>
+      <li [routerLink]="[{ outlets: { 'dash-content-area': ['profile'] } }]">Personal Details</li>
+      <li>Bank Transactions</li>
+      <li>Widthdraw</li>
+      <li>Deposit</li>
+      <li>Transfer to Account</li>
+      <li>Contact Us</li>
+    </ul>
   </div>
   
   <div class="col-10 main">

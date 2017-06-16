@@ -24,7 +24,9 @@ const appRoutes:Routes = [
   {path:'login',component: LoginComponent},
   {path:'register',component: RegisterComponent},
   {path:'dashboard',component: DashboardComponent, canActivate:[AuthGuard], children:[
-    {path:'dash',component: DashComponent, canActivate:[AuthGuard], outlet:'dash-content-area'},
+    
+    {path:'', component: DashComponent, canActivate:[AuthGuard], outlet:'dash-content-area'},
+    {path:'dash', component: DashComponent, canActivate:[AuthGuard], outlet:'dash-content-area'},
     {path:'profile',component: ProfileComponent, canActivate:[AuthGuard], outlet:'dash-content-area'}
   ]}
 ];

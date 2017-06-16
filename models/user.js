@@ -5,22 +5,36 @@ const UserSchema = mongoose.Schema({
   name: {
     type: String
   },
+  accnumber: {
+    type: String,
+    required: true,
+  },
+  address: {
+    street: String,
+    area: String,
+    county: String,
+    country:String
+  },
   email: {
     type: String,
-    required: true
+    required: true,
+ 
   },
   username: {
     type: String,
-    required: true
+    required: true,
+
   },
   password: {
     type: String,
     required: true
   },
   balance: {
-    type: String,
+    type: Number,
     required: true
-  }
+  },
+  created_at: Date,
+  updated_at: Date
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);
@@ -36,6 +50,7 @@ module.exports.getUserByUsername = function(username, callback){
 }
 
 module.exports.addUser = function(newUser, callback){
+  console.log(newUser);
   bcrypt.genSalt(10, (err, salt) => {
     bcrypt.hash(newUser.password, salt, (err, hash) => {
       if(err) throw err;

@@ -5,7 +5,7 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
-
+const router = express.Router();
 // Connect To Database
 mongoose.connect(config.database);
 
